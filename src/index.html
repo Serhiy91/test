@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="footballApp">
 <head>
 	<meta charset="UTF-8">
 	<title>Test Football App</title>
 	<link rel="stylesheet" href="vendor/vendor.min.css">
 	<link rel="stylesheet" href="test-football-app/test-football-app.css">
 </head>
-<body>
-
+<body ng-controller="FootballCtrl">
+	<div ng-repeat="championship in championships">{{championship.name}}</div>
 	<script src="vendor/vendor.min.js"></script>
 	<script src="test-football-app/test-football-app.js"></script>
 </body>
