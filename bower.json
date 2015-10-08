@@ -1,0 +1,14 @@
+{
+  "name": "test-football-app",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Serhiy91/test",
+  "authors": [
+    "Serhiy Zinchuk <serhiy91z@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
