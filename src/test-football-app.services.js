@@ -21,27 +21,6 @@ angular.module('footballApp')
 				}, function(error) {
 					return error.data;
 				});
-			},
-			getCountriesFlags: function() {
-				return $http.get(footballAppConstants.COUNTRIES_FLAGS_URL).then(function(response) {
-					return response.data.result;
-				}, function(error) {
-					return error.data;
-				});
-			},
-			getChempionshipsEmblems: function() {
-				return $http.get(footballAppConstants.CHAMPIONSHIPS_EMBLEMS_URL).then(function(response) {
-					return response.data.result;
-				}, function(error) {
-					return error.data;
-				});
-			},
-			getTeamsEmblems: function() {
-				return $http.get(footballAppConstants.TEAMS_EMBLEMS_URL).then(function(response) {
-					return response.data.result;
-				}, function(error) {
-					return error.data;
-				});
 			}
 		}
 	}]);
