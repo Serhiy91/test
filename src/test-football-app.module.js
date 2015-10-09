@@ -1,1 +1,1 @@
-angular.module('footballApp', []);
+angular.module('footballApp', ['templates']);

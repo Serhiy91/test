@@ -3,7 +3,8 @@
 var gulp = require("gulp"),
 	sass = require("gulp-sass"),
 	concat = require("gulp-concat"),
-	templateCache = require('gulp-angular-templatecache');
+	templateCache = require('gulp-angular-templatecache'),
+	eventStream = require("event-stream");
 
 var dist = "dist",
 	src = "src",
@@ -24,17 +25,24 @@ var vendorSrcCss = [
 
 gulp.task("default", ["build", "watch"]);
 
-gulp.task("sass", function () {
+gulp.task("sass", function() {
 	return gulp.src(src + "/**/*.scss")
 		.pipe(sass())
 		.pipe(concat("test-football-app.css"))
 		.pipe(gulp.dest(dist + "/test-football-app"));
 });
 
-gulp.task('js', function() {
-	return gulp.src(srcJs)
+gulp.task("js", function() {
+	return eventStream.merge(
+		gulp.src(src + "/*/**/*.html")
+			.pipe(templateCache({
+				standalone: true,
+				module: 'templates'
+			})),
+		gulp.src(srcJs)
+	)
 		.pipe(concat("test-football-app.js"))
-		.pipe(gulp.dest(dist + "/test-football-app"));
+		.pipe(gulp.dest(dist + '/test-football-app'));
 });
 
 gulp.task("vendorCss", function() {
