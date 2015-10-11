@@ -1,12 +1,10 @@
 <div class="container-fluid" ng-controller="FootballCtrl">
 	<div class="row">
-		<div class="col-sm-4" ng-repeat="championship in championships | orderBy:'num_order'">
-			<div class="title">
-				<img ng-src="{{image + championship.image}}" height="50px" />{{championship.name}}
-			</div>
-			<div ng-repeat="team in teams[championship.id_championship]">
-				<img ng-if="team.emblema" ng-src="{{imageTeam + team.emblema}}" height="20px" />{{team.name}}
-			</div>
+		<div class="col-sm-6 col-md-4 card-col"
+				ng-repeat="championship in championships | orderBy:'num_order' track by $index">
+			<championship-card
+					championship="championship" teams="teamsByChampionship[championship.id_championship]">
+			</championship-card>
 		</div>
 	</div>
 </div>

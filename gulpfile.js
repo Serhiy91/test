@@ -23,6 +23,10 @@ var vendorSrcCss = [
 	"bower_components/bootstrap/dist/css/bootstrap.min.css"
 ];
 
+var vendorFonts = [
+	"bower_components/bootstrap/dist/fonts/*"
+];
+
 gulp.task("default", ["build", "watch"]);
 
 gulp.task("sass", function() {
@@ -67,11 +71,17 @@ gulp.task("img", function() {
 		.pipe(gulp.dest(dist + "/images"))
 });
 
+gulp.task("fonts", function() {
+	gulp.src(vendorFonts)
+		.pipe(gulp.dest(dist + "/fonts"))
+});
+
 gulp.task('watch', function() {
 	gulp.watch(srcHtml, ["index"]);
 	gulp.watch(src + "/**/*.scss", ["sass"]);
 	gulp.watch(src + "/**/*.js", ["js"]);
+	gulp.watch(src + "/*/**/*.html", ["js"]);
 });
 
-gulp.task("build", ["vendorJs", "vendorCss", "sass", "index", "js", "img"]);
+gulp.task("build", ["vendorJs", "vendorCss", "sass", "index", "js", "img", "fonts"]);
 

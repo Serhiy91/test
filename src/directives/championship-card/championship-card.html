@@ -1,0 +1,27 @@
+<div class="championship-card">
+	<div class="teams-list" ng-if="!qwe">
+		<div class="header-card">
+			<img class="flogo" ng-src="{{imageChampionshipUrl + championship.image}}"/>
+			<span class="title" ng-show="!active">{{championship.name}}</span>
+			<my-search input-value="name" active="active" ng-class="{'search-width': active}"></my-search>
+			<div class="actions" ng-show="!active">
+				<span ng-click="sort()" class="glyphicon hover" ng-class="{'glyphicon-sort': !sortField,
+					'glyphicon-arrow-up': reverse, 'glyphicon-arrow-down': !reverse}" aria-hidden="true"></span>
+			</div>
+		</div>
+		<div class="teams">
+			<div class="team" ng-repeat="team in teams | filter:name:strict | orderBy:sortField:reverse track by $index"
+					ng-click="selectTeam(team)">
+				<div class="img-wrapper">
+					<img class="flogo" ng-if="team.emblema" ng-src="{{imageTeamUrl + team.emblema}}"/>
+					<span>{{team.name}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="team-info" ng-if="qwe">
+		<a href ng-click="ewq()">Назад</a>
+
+		<div class="title">{{team.name}}</div>
+	</div>
+</div>

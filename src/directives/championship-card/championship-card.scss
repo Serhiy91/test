@@ -1,0 +1,69 @@
+$main-color: #F44336;
+$cardHeight: 500px;
+$cardBackground: #fff;
+$titleColor: #fff;
+
+@mixin title-image-text($height) {
+	height: $height;
+	padding: 5px 15px 5px 25px;
+	.title {
+		font-weight: bold;
+		font-size: 115%;
+	}
+	.flogo {
+		border-radius: 2px;
+		height: $height - 10;
+		min-width: $height - 10;
+		margin-right: 15px;
+		vertical-align: middle;
+	}
+}
+@mixin title-text {
+	background: $main-color;
+	span {
+		color: $titleColor;
+	}
+}
+
+.championship-card {
+	height: $cardHeight;
+	box-shadow: 0 0 5px rgba(0,0,0,0.40);
+	background: $cardBackground;
+	.teams-list {
+		height: 100%;
+		.header-card {
+			@include title-image-text(50px);
+			@include title-text;
+			.search-width {
+				width: calc(100% - 60px);
+			}
+			.actions {
+				float: right;
+				margin: 8px 10px 0 0;
+				font-size: 115%;
+				cursor: pointer;
+			}
+		}
+		.teams {
+			height: calc(100% - 50px);
+			overflow: auto;
+			&::-webkit-scrollbar {
+				width: 5px;
+			}
+			&::-webkit-scrollbar-track {
+				-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+			}
+			&::-webkit-scrollbar-thumb {
+				background: lighten($main-color, 30%);
+			}
+			.team {
+				border-top: 1px solid #e0e0e0;
+				cursor: pointer;
+				@include title-image-text(45px);
+			}
+			.team:hover {
+				background: #f5f5f5;
+			}
+		}
+	}
+}

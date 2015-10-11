@@ -1,9 +1,7 @@
 angular.module('footballApp')
-	.controller('FootballCtrl', ['$scope', 'FootballAppService', 'footballAppConstants',
-		function($scope, FootballAppService, footballAppConstants) {
+	.controller('FootballCtrl', ['$scope', 'FootballAppService', function($scope, FootballAppService) {
 			FootballAppService.getChampionships().then(function(championships) {
 				$scope.championships = championships;
-				$scope.image = footballAppConstants.CHAMPIONSHIPS_EMBLEMS_URL;
 			});
 			FootballAppService.getTeams().then(function(teams) {
 				var i;
@@ -19,7 +17,6 @@ angular.module('footballApp')
 						teamsByChampionship[championshipId].push(teams[i]);
 					}
 				}
-				$scope.teams = teamsByChampionship;
-				$scope.imageTeam = footballAppConstants.TEAMS_EMBLEMS_URL;
+				$scope.teamsByChampionship = teamsByChampionship;
 			});
 		}]);
