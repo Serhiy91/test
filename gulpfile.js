@@ -2,6 +2,7 @@
 
 var gulp = require("gulp"),
 	sass = require("gulp-sass"),
+	prefix = require("gulp-autoprefixer"),
 	concat = require("gulp-concat"),
 	templateCache = require('gulp-angular-templatecache'),
 	eventStream = require("event-stream");
@@ -33,6 +34,10 @@ gulp.task("default", ["build", "watch"]);
 gulp.task("sass", function() {
 	return gulp.src(src + "/**/*.scss")
 		.pipe(sass())
+		.pipe(prefix({
+			browsers: ['last 15 versions'],
+			cascade: false
+		}))
 		.pipe(concat("test-football-app.css"))
 		.pipe(gulp.dest(dist + "/test-football-app"));
 });
