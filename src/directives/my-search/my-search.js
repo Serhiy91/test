@@ -1,5 +1,5 @@
 angular.module('footballApp')
-	.directive('mySearch', function($compile) {
+	.directive('mySearch', function() {
 		return {
 			restrict: 'EA',
 			scope: {
@@ -7,8 +7,12 @@ angular.module('footballApp')
 				inputValue: '='
 			},
 			templateUrl: "directives/my-search/my-search.html",
-			link: function(scope, element, attrs) {
-				scope.active = false;
+			controller: function($scope) {
+				$scope.active = false;
+				$scope.close = function() {
+					$scope.active = false;
+					$scope.inputValue='';
+				}
 			}
 		}
 	});

@@ -1,0 +1,45 @@
+my-slider-text {
+	.my-slider {
+		text-align: center;
+		background: #f44336;
+		color: #fff;
+		min-height: 99px;
+		.header-slider {
+			padding-top: 5px;
+			.title {
+				margin: 0 40px;
+				font-weight: bold;
+				font-size: 105%;
+			}
+		}
+		.button-left, .button-right {
+			color: #fff;
+			cursor: pointer;
+		}
+		.slide-area {
+			display: table;
+			width: 100%;
+			min-height: 73px;
+			.slide {
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+
+		.animation-fade.ng-enter,
+		.animation-fade.ng-leave {
+			transition: 800ms all;
+		}
+
+		.animation-fade.ng-leave.ng-leave-active,
+		.animation-fade.ng-enter {
+			opacity: 0;
+			height: 0;
+		}
+
+		.animation-fade.ng-enter.ng-enter-active,
+		.animation-fade.ng-leave {
+			opacity: 1;
+		}
+	}
+}

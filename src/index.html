@@ -7,7 +7,17 @@
 	<link rel="stylesheet" href="test-football-app/test-football-app.css">
 </head>
 <body>
-<div ng-include="'components/test.html'"></div>
+
+<div class="container-fluid" ng-controller="FootballCtrl">
+	<div class="row">
+		<div class="col-sm-6 col-lg-4 card-col"
+				ng-repeat="championship in championships | orderBy:'num_order' track by $index">
+			<championship-card
+					championship="championship" teams="teamsByChampionship[championship.id_championship]">
+			</championship-card>
+		</div>
+	</div>
+</div>
 
 <script src="vendor/vendor.min.js"></script>
 <script src="test-football-app/test-football-app.js"></script>

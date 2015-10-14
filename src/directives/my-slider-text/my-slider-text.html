@@ -1,0 +1,16 @@
+<div class="my-slider">
+	<div class="header-slider">
+		<span class="glyphicon glyphicon-chevron-left button-left" ng-hide="titles.length < 2"
+				ng-click="previous()"></span>
+		<span class="title">Титули</span>
+		<span class="glyphicon glyphicon-chevron-right button-right" ng-hide="titles.length < 2"
+				ng-click="next(true)"></span>
+	</div>
+	<div class="animation-fade" ng-repeat="(i, tournament) in titles" ng-if="i == slideIndex">
+		<div class="slide-area">
+			<div class="slide">
+				<span ng-bind-html="sce.trustAsHtml(tournament)"></span>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,9 +1,11 @@
-<span class="glyphicon glyphicon-search open-search" aria-hidden="true" ng-show="!active"
-		ng-click="active = true"></span>
-<div class="input-group" ng-show="active">
-	<input type="text" class="form-control search-field" placeholder="Пошук" aria-describedby="basic-addon2"
-			my-focus="{{active}}" ng-model="inputValue.name">
+<span class="glyphicon glyphicon-search open-search" aria-hidden="true"
+		ng-show="!active" ng-click="active = true"></span>
+<div class="input-group search-animate" ng-show="active">
+	<input type="text" class="form-control search-field" placeholder="Пошук"
+			aria-describedby="basic-addon2" my-focus="{{active}}" ng-model="inputValue.name">
 	<span class="input-group-addon app-addon" id="basic-addon2">
-		<span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="active = false; inputValue=''"></span>
+		<span class="glyphicon glyphicon-remove icon-animate" aria-hidden="true" ng-show="active"
+				ng-click="close()"></span>
 	</span>
 </div>
+

@@ -1,1 +1,4 @@
-angular.module('footballApp', ['templates']);
+angular.module('footballApp', [
+	'templates',
+	'ngAnimate'
+]);

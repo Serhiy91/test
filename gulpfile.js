@@ -16,7 +16,8 @@ var dist = "dist",
 	srcHtml = "src/index.html";
 
 var vendorSrcJs = [
-	"bower_components/angular/angular.min.js"
+	"bower_components/angular/angular.min.js",
+	"bower_components/angular-animate/angular-animate.min.js"
 ];
 
 var vendorSrcCss = [
