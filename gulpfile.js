@@ -7,12 +7,14 @@ var gulp = require("gulp"),
 	templateCache = require('gulp-angular-templatecache'),
 	eventStream = require("event-stream");
 
+var Server = require("karma").Server;
+
 var dist = "dist",
 	src = "src",
 	srcJs = [
 		src + "/**/*.module.js",
 		src + "/**/*.config.js",
-		src + "/**/*.js"
+		src + "/**/!(*spec).js"
 	],
 	srcHtml = "src/index.html";
 
@@ -90,4 +92,11 @@ gulp.task('watch', function() {
 });
 
 gulp.task("build", ["vendorJs", "vendorCss", "sass", "index", "js", "img", "fonts"]);
+
+gulp.task("unit-test", function(done) {
+	new Server({
+		configFile: __dirname + "/karma.conf.js",
+		singleRun: true
+	}, done).start();
+});
 

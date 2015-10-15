@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src\directives\championship-card\championship-card.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">src\directives\championship-card\championship-card.js</span></h1>
+    <h2>
+        Statements: <span class="metric">7.14% <small>(2 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">7.14% <small>(2 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/directives/championship-card/</a> &#187; championship-card.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">angular.module('footballApp')
+	.directive('championshipCard', ['footballAppConstants', <span class="fstat-no" title="function not covered" >function(footballAppConstants) {</span>
+<span class="cstat-no" title="statement not covered" >		return {</span>
+			restrict: 'EA',
+			templateUrl: "directives/championship-card/championship-card.html",
+			scope: {
+				championship: '=',
+				teams: '='
+			},
+			link: <span class="fstat-no" title="function not covered" >function($scope, element) {</span>
+<span class="cstat-no" title="statement not covered" >				$scope.selectTeam = <span class="fstat-no" title="function not covered" >function(team) {</span></span>
+<span class="cstat-no" title="statement not covered" >					var deletedEmptyTag;</span>
+<span class="cstat-no" title="statement not covered" >					if (team.foundation_year != 0) {</span>
+<span class="cstat-no" title="statement not covered" >						var elem = element.children().children()[1];</span>
+<span class="cstat-no" title="statement not covered" >						elem.scrollTop = 0;</span>
+<span class="cstat-no" title="statement not covered" >						$scope.teamCard = true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >						deletedEmptyTag = team.title.replace(/&lt;(p)\s[^&gt;]+&gt;/g, '&lt;p&gt;')</span>
+							.replace(/&lt;p&gt;&amp;nbsp;&lt;\/p&gt;/g, '')
+							.replace(/&lt;p&gt;-&lt;\/p&gt;/g, '');
+<span class="cstat-no" title="statement not covered" >						team.parsedTitle = deletedEmptyTag.replace().match(/&lt;p&gt;(.*?)&lt;\/p&gt;/g);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >						if (team.id_championship === '7') {</span>
+<span class="cstat-no" title="statement not covered" >							team.parsedTitle = parseItalianTitles(team.parsedTitle);</span>
+						}
+<span class="cstat-no" title="statement not covered" >						$scope.team = team;</span>
+					}
+&nbsp;
+<span class="fstat-no" title="function not covered" >					function parseItalianTitles(titlesStr) {</span>
+<span class="cstat-no" title="statement not covered" >						var titles = [];</span>
+<span class="cstat-no" title="statement not covered" >						titlesStr.reduce(<span class="fstat-no" title="function not covered" >function(preElem ,elem, i) {</span></span>
+<span class="cstat-no" title="statement not covered" >							if (i % 2 === 0) {</span>
+<span class="cstat-no" title="statement not covered" >								return preElem = elem;</span>
+							} else {
+<span class="cstat-no" title="statement not covered" >								return titles.push((preElem + elem).replace(/&lt;\/?p&gt;/g, ''));</span>
+							}
+						});
+<span class="cstat-no" title="statement not covered" >						return titles;</span>
+					}
+				};
+			},
+			controller: <span class="fstat-no" title="function not covered" >function($scope) {</span>
+<span class="cstat-no" title="statement not covered" >				$scope.imageChampionshipUrl = footballAppConstants.CHAMPIONSHIPS_EMBLEMS_URL;</span>
+<span class="cstat-no" title="statement not covered" >				$scope.imageTeamUrl = footballAppConstants.TEAMS_EMBLEMS_URL;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >				$scope.infoList = [</span>
+					{title: 'Рік заснування', name: 'foundation_year'},
+					{title: 'Місто', name: 'city'},
+					{title: 'Тренер', name: 'coach'},
+					{title: 'Президент', name: 'president'},
+					{title: 'Домашній стадіон', name: 'home_stadion'},
+					{title: 'Офіційний сайт', name: 'off_site'}
+				];
+&nbsp;
+<span class="cstat-no" title="statement not covered" >				$scope.sort = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >					$scope.reverse = !$scope.reverse;</span>
+<span class="cstat-no" title="statement not covered" >					$scope.sortField = $scope.reverse !== undefined ? 'name' : false;</span>
+				};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >				$scope.goBack = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >					$scope.teamCard = false;</span>
+				};
+			}
+		}
+	}]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Oct 15 2015 13:56:39 GMT+0300 (Финляндия (лето))</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -14,13 +14,6 @@ angular.module('footballApp')
 				}, function(error) {
 					return error.data;
 				});
-			},
-			getLatestMatches: function() {
-				return $http.get(footballAppConstants.LATEST_MATCHES_URL).then(function(response) {
-					return response.data.result;
-				}, function(error) {
-					return error.data;
-				});
 			}
 		}
 	}]);

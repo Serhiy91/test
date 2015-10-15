@@ -30,13 +30,11 @@ my-slider-text {
 		.animation-fade.ng-leave {
 			transition: 800ms all;
 		}
-
 		.animation-fade.ng-leave.ng-leave-active,
 		.animation-fade.ng-enter {
 			opacity: 0;
 			height: 0;
 		}
-
 		.animation-fade.ng-enter.ng-enter-active,
 		.animation-fade.ng-leave {
 			opacity: 1;

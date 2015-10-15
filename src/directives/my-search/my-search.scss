@@ -21,6 +21,9 @@ my-search {
 		&::-webkit-input-placeholder {
 			color: #fff;
 		}
+		&::-moz-placeholder {
+			color: #fff;
+		}
 	}
 	.app-addon {
 		border: none;
@@ -33,10 +36,10 @@ my-search {
 			cursor: pointer;
 		}
 	}
+
 	.search-animate {
 		width: 100%;
 	}
-
 	.search-animate.ng-hide-remove.ng-hide-remove-active {
 		transition: all linear 0.4s;
 	}
