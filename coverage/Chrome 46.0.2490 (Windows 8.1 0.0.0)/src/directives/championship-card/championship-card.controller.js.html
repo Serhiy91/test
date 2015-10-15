@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src\directives\championship-card\championship-card.controller.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src\directives\championship-card\championship-card.controller.js</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(26 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">70% <small>(7 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(6 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(26 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/directives/championship-card/</a> &#187; championship-card.controller.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">angular.module('footballApp')
+	.controller('ChampionshipCardCtrl', ['$scope', 'footballAppConstants',
+		function($scope, footballAppConstants) {
+			$scope.imageChampionshipUrl = footballAppConstants.CHAMPIONSHIPS_EMBLEMS_URL;
+			$scope.imageTeamUrl = footballAppConstants.TEAMS_EMBLEMS_URL;
+&nbsp;
+			$scope.infoList = [
+				{title: 'Рік заснування', name: 'foundation_year'},
+				{title: 'Місто', name: 'city'},
+				{title: 'Тренер', name: 'coach'},
+				{title: 'Президент', name: 'president'},
+				{title: 'Домашній стадіон', name: 'home_stadion'},
+				{title: 'Офіційний сайт', name: 'off_site'}
+			];
+&nbsp;
+			$scope.sort = function() {
+				$scope.reverse = !$scope.reverse;
+				$scope.sortField = $scope.reverse !== undefined ? 'name' : <span class="branch-1 cbranch-no" title="branch not covered" >false;</span>
+			};
+&nbsp;
+			$scope.goBack = function() {
+				$scope.teamCard = false;
+			};
+&nbsp;
+			$scope.selectTeam = function(team) {
+				var deletedEmptyTag;
+&nbsp;
+				<span class="missing-if-branch" title="else path not taken" >E</span>if (team.foundation_year != 0) {
+					$scope.teamCard = true;
+&nbsp;
+					deletedEmptyTag = team.title.replace(/&lt;(p)\s[^&gt;]+&gt;/g, '&lt;p&gt;')
+						.replace(/&lt;p&gt;&amp;nbsp;&lt;\/p&gt;/g, '')
+						.replace(/&lt;p&gt;-&lt;\/p&gt;/g, '');
+					team.parsedTitle = deletedEmptyTag.match(/&lt;p&gt;(.*?)&lt;\/p&gt;/g);
+&nbsp;
+					if (team.id_championship === '7') {
+						<span class="missing-if-branch" title="else path not taken" >E</span>if (team.parsedTitle) {
+							team.parsedTitle = parseItalianTitles(team.parsedTitle);
+						}
+					}
+					$scope.team = team;
+				}
+&nbsp;
+				function parseItalianTitles(titlesStr) {
+					var titles = [];
+					titlesStr.reduce(function(preElem ,elem, i) {
+						if (i % 2 === 0) {
+							return preElem = elem;
+						} else {
+							return titles.push((preElem + elem).replace(/&lt;\/?p&gt;/g, ''));
+						}
+					});
+					return titles;
+				}
+			};
+		}]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Oct 16 2015 00:32:31 GMT+0300 (Финляндия (лето))</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

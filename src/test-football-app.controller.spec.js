@@ -1,5 +1,5 @@
 describe('main controller', function() {
-	var responseC = [
+	var responseChampionships = [
 		{
 			'id_championship': '1',
 			'image': 'ukraine.jpg',
@@ -17,55 +17,68 @@ describe('main controller', function() {
 			'title': 'league-champions'
 		}
 	];
-	var responseT = [
+	var responseTeams = [
 		{
-			city: "Харків",
-			coach: "Ігор Рахаєв",
-			emblema: "metalist.gif",
-			foundation_year: "1926",
-			home_stadion: "OSK Metalist",
-			id_championship: "1",
-			id_teams: "88",
-			name: "Металіст",
-			off_site: "http://www.metalist.ua",
-			president: "Сергій Курченко",
-			second_name: ""
+			"id_championship": "1",
+			"id_teams": "88",
+			"name": "Металіст"
 		},
 		{
-			city: "Київ",
-			coach: "-",
-			emblema: "obolon.gif",
-			foundation_year: "1992",
-			home_stadion: "Obolon",
-			id_championship: "1",
-			id_teams: "267",
-			name: "Оболонь",
-			off_site: "http://www.fc.obolon.ua",
-			president: "-",
-			second_name: ""
+			"id_championship": "1",
+			"id_teams": "267",
+			"name": "Оболонь"
+		},
+		{
+			"id_championship": "3",
+			"id_teams": "366",
+			"name": "Слован"
 		}
 	];
-	var $scope, footballAppService, mainCtrl, footballAppConstants;
+	var colectionByChampionships = {
+		1: [{
+				"id_championship": "1",
+				"id_teams": "88",
+				"name": "Металіст"
+		},
+			{
+				"id_championship": "1",
+				"id_teams": "267",
+				"name": "Оболонь"
+			}],
+		3: [{
+			"id_championship": "3",
+			"id_teams": "366",
+			"name": "Слован"
+		}]
+	};
+	var $scope, footballAppService, deferredChampionships, deferredTeams;
 	beforeEach(module("footballApp"));
 
-	beforeEach(inject(function($rootScope, _FootballAppService_, _footballAppConstants_, $controller, $httpBackend){
+	beforeEach(inject(function($rootScope, _FootballAppService_, $controller, $q){
 		$scope = $rootScope.$new();
 		footballAppService = _FootballAppService_;
-		footballAppConstants = _footballAppConstants_;
+		deferredChampionships = $q.defer();
+		deferredTeams = $q.defer();
 
-		$httpBackend.when('GET', 'http://footballbet.com.ua/api/championships/')
-			.respond(responseC);
-		$httpBackend.when('GET', 'http://footballbet.com.ua/api/teams/')
-			.respond(responseT);
+		deferredChampionships.resolve(responseChampionships);
+		spyOn(footballAppService, 'getChampionships').and.returnValue(deferredChampionships.promise);
 
-		mainCtrl = $controller("FootballCtrl", {
+		deferredTeams.resolve(responseTeams);
+		spyOn(footballAppService, 'getTeams').and.returnValue(deferredTeams.promise);
+
+		$controller("FootballCtrl", {
 			$scope: $scope,
 			FootballAppService: footballAppService
 		});
-		$httpBackend.flush();
 	}));
 
-	it('should set data to', function() {
-		expect($scope.championships).toEqual(response);
+	it('should set data to scope', function() {
+		$scope.$digest();
+		expect($scope.championships).toEqual(responseChampionships);
+	});
+
+	it('should create team colection by championships', function() {
+		$scope.$digest();
+		expect($scope.teamsByChampionship).toEqual(colectionByChampionships);
 	});
 });

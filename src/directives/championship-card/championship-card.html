@@ -19,7 +19,8 @@
 	<div class="body-card">
 		<div class="teams animate-select-team" ng-if="!teamCard">
 			<div class="team animate qwe" ng-if="team.name !== ''"
-					ng-click="selectTeam(team)" ng-class="{'no-info': team.foundation_year == 0}"
+					ng-click="selectTeam(team); scrollForAnimation(team)"
+					ng-class="{'no-info': team.foundation_year == 0}"
 					ng-repeat="team in teams | filter:name:strict | orderBy:sortField:reverse track by $index">
 				<div class="img-wrapper">
 					<img class="flogo" ng-if="team.emblema" alt="{{team.name}}"
@@ -34,6 +35,10 @@
 				<tr ng-repeat="item in infoList">
 					<td class="header">{{item.title}}</td>
 					<td class="inform">{{team[item.name]}}</td>
+				</tr>
+				<tr>
+					<td class="header">Офіційний сайт</td>
+					<td class="inform"><a ng-href="{{team.off_site}}">{{team.off_site}}</a></td>
 				</tr>
 			</table>
 			<my-slider-text ng-if="team.parsedTitle[0]" titles="team.parsedTitle"></my-slider-text>
